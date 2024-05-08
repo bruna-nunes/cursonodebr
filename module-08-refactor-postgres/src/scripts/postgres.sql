@@ -1,0 +1,26 @@
+DROP TABLE IF EXISTS TB_HEROIS;
+
+CREATE TABLE TB_HEROI (
+    ID INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY NOT NULL,
+    NOME TEXT NOT NULL,
+    PODER TEXT NOT NULL
+)
+
+--create
+INSERT INTO TB_HEROI(NOME, PODER)
+VALUES
+    ('FLASH', 'VELOCIDADE,'),
+    ('Aquaman', 'Falar com os animais'),
+    ('Batman', 'Dinheiro')
+
+-- read
+SELECT * FROM TB_HEROI
+SELECT * FROM TB_HEROI WHERE nome='Aquaman'
+
+--update
+UPDATE TB_HEROI
+SET NOME = 'Goku', PODER = 'Todos'
+where ID = 1
+
+--delete
+DELETE FROM TB_HEROI where ID = 2
